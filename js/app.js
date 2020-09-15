@@ -28,7 +28,7 @@ formEl.addEventListener('submit', evt => {
         divEl.classList.add('row');
         const insideDiv = document.createElement('div');
         insideDiv.classList.add('col', 'd-flex', 'justify-content-center', 'align-items-center');
-        let textCont = `(${a1!=0? a1 + '&nbsp;':''}${b1!=0? b1>0?'+&nbsp;'+b1:'-&nbsp;'+Math.abs(b1) :''}&nbsp;<span class="math">i</span>&nbsp;)&nbsp;${sing(element.id)}&nbsp
+        let textCont = `(${a1!=0? a1 + '&nbsp;':''}${b1!=0? b1>0?'+&nbsp;'+b1:'-&nbsp;'+Math.abs(b1) :''}&nbsp;<span class="math">i</span>&nbsp;)&nbsp;${sing(element.id)}
                     (${a2!=0? a2 + '&nbsp;':''}${b2!=0? b2>0?'+&nbsp;'+b2:'-&nbsp;'+Math.abs(b2) :''}&nbsp;<span class="math">i</span>&nbsp;)&nbsp;=&nbsp;`;
         if (typeof(resObj[0][1]) != 'object') {
             textCont += `${resObj[0][1]!=0? resObj[0][1]>0?resObj[0][1]:'-&nbsp;'+Math.abs(resObj[0][1])+'&nbsp;' :''}`;
@@ -39,7 +39,7 @@ formEl.addEventListener('submit', evt => {
         if (typeof(resObj[1][1]) != 'object') {
             textCont += `${resObj[1][1]!=0? resObj[1][1]>0?resObj[1][1]!=1?'+&nbsp;'+resObj[1][1]+'&nbsp;<span class="math">i</span>':'&nbsp;+&nbsp;<span class="math">i</span>':resObj[1][1]!=1?'-&nbsp;'+Math.abs(resObj[1][1])+'&nbsp;<span class="math">i</span>': '&nbsp;-&nbsp;<span class="math">i</span>':''}`;
         } else {
-            textCont += `${resObj[1][1][1]>0?resObj[1][1][1]>0?'&nbsp;+'+resObj[1][1][1]+'/'+resObj[1][1][2]+'&nbsp;<span class="math">i</span>':'-&nbsp'+resObj[1][1][1]+'/'+resObj[1][1][2]+'&nbsp;<span class="math">i</span>': resObj[1][1][0]>0?'-&nbsp;'+resObj[1][1][1]+'/'+resObj[1][1][2]+'&nbsp;<span class="math">i</span>':'+&nbsp;'+resObj[1][1][1]+'/'+resObj[1][1][2]+'&nbsp;<span class="math">i</span>'}`;
+            textCont += `${resObj[1][1][1]>0?resObj[1][1][1]>0?'&nbsp;+&nbsp;'+resObj[1][1][1]+'/'+resObj[1][1][2]+'&nbsp;<span class="math">i</span>':'-&nbsp'+resObj[1][1][1]+'/'+resObj[1][1][2]+'&nbsp;<span class="math">i</span>': resObj[1][1][0]>0?'-&nbsp;'+resObj[1][1][1]+'/'+resObj[1][1][2]+'&nbsp;<span class="math">i</span>':'+&nbsp;'+resObj[1][1][1]+'/'+resObj[1][1][2]+'&nbsp;<span class="math">i</span>'}`;
         }
         insideDiv.innerHTML = textCont;
         divEl.appendChild(insideDiv);
