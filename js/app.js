@@ -83,7 +83,7 @@ function refrefClearEl() {
         const divInsideBtn = document.createElement('div');
         divInsideBtn.classList.add('col-3');
         const btnEl = document.createElement('button');
-        btnEl.classList.add('btn', 'btn-primary', 'btn-block');
+        btnEl.classList.add('btn', 'btn-primary', 'btn-block', 'px-0');
         btnEl.setAttribute('id', 'clear');
         btnEl.textContent = 'Clear';
         divInsideBtn.appendChild(btnEl);
