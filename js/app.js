@@ -11,9 +11,9 @@ const btn = document.querySelector('#submitForm'),
     section = document.querySelector('section');
 
 formEl.addEventListener('submit', evt => {
-    console.log(section.querySelectorAll('.row').length);
     evt.preventDefault();
     if (a1El.value == '' || a2El.value == '' || b1El.value == '' || b2El.value == '') {
+        alert('Don\'t hardcore website');
         return;
     }
     const a1 = Number(a1El.value),
@@ -23,7 +23,6 @@ formEl.addEventListener('submit', evt => {
 
     Array.from(document.querySelectorAll('input[type="checkbox"]')).filter(el => el.checked).forEach(element => {
         let resObj = Object.entries(calculate(element.id, a1, b1, a2, b2));
-        console.log(resObj);
         const divEl = document.createElement('div');
         divEl.classList.add('row');
         const insideDiv = document.createElement('div');
