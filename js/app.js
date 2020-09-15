@@ -28,7 +28,7 @@ formEl.addEventListener('submit', evt => {
         divEl.classList.add('row');
         const insideDiv = document.createElement('div');
         insideDiv.classList.add('col', 'd-flex', 'justify-content-center', 'align-items-center');
-        let textCont = `(${a1!=0? a1 + '&nbsp;':''}${b1!=0? b1>0?'+&nbsp;'+b1:'-&nbsp;'+Math.abs(b1) :''}&nbsp;<span class="math">i</span>&nbsp;)&nbsp;+&nbsp
+        let textCont = `(${a1!=0? a1 + '&nbsp;':''}${b1!=0? b1>0?'+&nbsp;'+b1:'-&nbsp;'+Math.abs(b1) :''}&nbsp;<span class="math">i</span>&nbsp;)&nbsp;${sing(element.id)}&nbsp
                     (${a2!=0? a2 + '&nbsp;':''}${b2!=0? b2>0?'+&nbsp;'+b2:'-&nbsp;'+Math.abs(b2) :''}&nbsp;<span class="math">i</span>&nbsp;)&nbsp;=&nbsp;`;
         if (typeof(resObj[0][1]) != 'object') {
             textCont += `${resObj[0][1]!=0? resObj[0][1]>0?resObj[0][1]:'-&nbsp;'+Math.abs(resObj[0][1])+'&nbsp;' :''}`;
@@ -54,6 +54,27 @@ formEl.addEventListener('submit', evt => {
         });
     }
 });
+
+function sing(typeOfEl) {
+    let result = '';
+    switch (typeOfEl) {
+        case 'sum':
+            result = '+';
+            break;
+        case 'difference':
+            result = '-';
+            break;
+        case 'multiply':
+            result = '*';
+        break;
+        case 'devide':
+            result = '/';
+            break;
+        default:
+            break;
+    }
+    return result;
+}
 
 function refrefClearEl() {
     if (section.querySelectorAll('.row').length > 0 && document.getElementById('clear') == null) {
